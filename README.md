@@ -1,0 +1,1 @@
+# Paid-Google-Ad-Specialist
