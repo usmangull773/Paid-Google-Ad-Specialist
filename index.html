@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>100% PURE · Google Ads Leak &amp; Growth Map</title>
+<meta name="description" content="Where 100% PURE's Google spend is leaking, where the next sales are, and a 90 day plan to fix it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap">
+<style>
+:root{
+  --bg:#FBF8F5; --surface:#FFFFFF; --surface-2:#F4EEE9;
+  --ink:#1F1A1C; --ink-2:#463E42; --muted:#766C71; --line:#E9E1DB; --line-2:#F1EBE6;
+  --berry:#8E2F4E; --berry-2:#B4546F; --berry-bg:#F7ECEF;
+  --good:#16774F; --good-bg:#ECF6F0; --good-line:#CFE7DA;
+  --alert:#C0392B; --alert-bg:#FCEDEA; --alert-line:#F2D1CB;
+  --warn:#A86400; --warn-bg:#FDF3E3; --warn-line:#F2DDB6;
+  --link:#1a4fbf;
+  --shadow-sm:0 1px 2px rgba(31,26,28,.05);
+  --shadow:0 2px 6px rgba(31,26,28,.05), 0 22px 48px -22px rgba(31,26,28,.18);
+  --r:16px; --maxw:1120px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#161214; --surface:#1F1A1D; --surface-2:#272024;
+    --ink:#F3ECEF; --ink-2:#D6CBD0; --muted:#A79BA1; --line:#352C31; --line-2:#2B2428;
+    --berry:#E08AA6; --berry-2:#C66F8B; --berry-bg:#3A222B;
+    --good:#5FCB9C; --good-bg:#15302699; --good-line:#26483C;
+    --alert:#F2918A; --alert-bg:#3A201E99; --alert-line:#58312E;
+    --warn:#F0B75C; --warn-bg:#36291599; --warn-line:#56421F;
+    --link:#8ab4f8;
+    --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+    --shadow:0 2px 6px rgba(0,0,0,.3), 0 22px 48px -22px rgba(0,0,0,.65);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#161214; --surface:#1F1A1D; --surface-2:#272024;
+  --ink:#F3ECEF; --ink-2:#D6CBD0; --muted:#A79BA1; --line:#352C31; --line-2:#2B2428;
+  --berry:#E08AA6; --berry-2:#C66F8B; --berry-bg:#3A222B;
+  --good:#5FCB9C; --good-bg:#15302699; --good-line:#26483C;
+  --alert:#F2918A; --alert-bg:#3A201E99; --alert-line:#58312E;
+  --warn:#F0B75C; --warn-bg:#36291599; --warn-line:#56421F;
+  --link:#8ab4f8;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+  --shadow:0 2px 6px rgba(0,0,0,.3), 0 22px 48px -22px rgba(0,0,0,.65);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px}
+h1,h2,h3,h4{font-family:"Schibsted Grotesk",-apple-system,"Segoe UI",sans-serif; margin:0; letter-spacing:-.025em; font-weight:600; text-wrap:balance}
+p{margin:0}
+strong{font-weight:600; color:var(--ink)}
+.serif{font-family:"Instrument Serif",Georgia,serif; font-style:italic; font-weight:400; letter-spacing:-.01em; color:var(--berry)}
+.eyebrow{font-family:"Schibsted Grotesk",sans-serif; font-size:11.5px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--berry)}
+.r{color:var(--alert)} .g{color:var(--good)}
+.dot{width:8px;height:8px;border-radius:50%; display:inline-block; flex:0 0 auto}
+.dot.r{background:var(--alert)} .dot.a{background:var(--warn)} .dot.g{background:var(--good)}
+.badge{flex:0 0 auto; font-family:"Schibsted Grotesk",sans-serif; font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; padding:5px 11px; border-radius:100px; white-space:nowrap}
+.badge.ok{color:var(--good); background:var(--good-bg); border:1px solid var(--good-line)}
+.badge.no{color:var(--alert); background:var(--alert-bg); border:1px solid var(--alert-line)}
+.badge.mid{color:var(--warn); background:var(--warn-bg); border:1px solid var(--warn-line)}
+
+.progress{position:fixed; top:0; left:0; height:3px; width:0; background:linear-gradient(90deg,var(--berry),var(--good)); z-index:50}
+.topbar{border-bottom:1px solid var(--line); background:color-mix(in srgb,var(--bg) 88%,transparent); position:sticky; top:0; z-index:40; backdrop-filter:saturate(1.4) blur(10px); -webkit-backdrop-filter:saturate(1.4) blur(10px)}
+.topbar .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 32px}
+.brand{display:flex; align-items:center; gap:11px}
+.mark{width:26px;height:26px;border-radius:50%; background:radial-gradient(circle at 32% 30%, var(--berry-2), var(--berry) 72%)}
+.brand b{font-family:"Schibsted Grotesk",sans-serif; font-weight:600; font-size:14px; display:block; line-height:1.2}
+.brand span{display:block; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted)}
+.nav{display:flex; gap:2px}
+.nav a{font-size:13px; text-decoration:none; color:var(--muted); padding:6px 12px; border-radius:100px}
+.nav a:hover{background:var(--surface-2); color:var(--ink)}
+
+section{padding:52px 0}
+.sec-head{display:flex; justify-content:space-between; align-items:flex-end; gap:32px; margin-bottom:24px}
+.sec-head .eyebrow{display:block; margin-bottom:10px}
+.sec-head h2{font-size:clamp(24px,2.8vw,32px); line-height:1.12}
+.sec-head .sub{color:var(--muted); font-size:15px; max-width:44ch; text-align:right}
+.legend{display:flex; gap:16px; flex-wrap:wrap; justify-content:flex-end}
+.legend span{display:inline-flex; align-items:center; gap:7px; font-size:13.5px}
+
+/* HERO */
+.hero .wrap{padding-top:48px; padding-bottom:8px; display:grid; grid-template-columns:1.05fr .95fr; gap:52px; align-items:center}
+.hero .eyebrow{display:block; margin-bottom:16px}
+.hero h1{font-size:clamp(34px,4.8vw,56px); line-height:1.03; font-weight:700; letter-spacing:-.04em}
+.hero h1 .serif{font-size:1.08em}
+.lede{margin-top:18px; font-size:17.5px; line-height:1.55; color:var(--ink-2); max-width:44ch}
+.hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; align-items:center}
+.btn{display:inline-flex; align-items:center; gap:9px; font-size:14px; font-weight:600; text-decoration:none; padding:11px 18px; border-radius:100px; background:var(--ink); color:var(--bg); transition:transform .2s}
+.btn:hover{transform:translateY(-1px)}
+.hero-cta small{font-size:13px; color:var(--muted)}
+
+.snap{background:var(--surface); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow); padding:6px 22px 14px}
+.snap-h{display:flex; justify-content:space-between; align-items:baseline; padding:16px 0 6px}
+.snap-h b{font-family:"Schibsted Grotesk",sans-serif; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--muted)}
+.snap-h small{font-size:12px; color:var(--muted)}
+.srow{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:11px 10px; margin:0 -10px; border-top:1px solid var(--line-2); border-radius:10px; text-decoration:none; color:inherit; transition:background .2s}
+a.srow:hover{background:var(--surface-2)}
+.srow .st{font-size:14.5px; font-weight:500; line-height:1.3}
+.srow .st small{display:block; font-weight:400; color:var(--muted); font-size:12.5px; margin-top:2px}
+.snap-f{font-size:12px; color:var(--muted); padding-top:10px; border-top:1px solid var(--line-2)}
+
+/* MAP */
+.leaks{display:flex; flex-direction:column; gap:12px}
+.leak{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow-sm); overflow:hidden; transition:box-shadow .25s,border-color .25s; scroll-margin-top:80px}
+.leak.open{box-shadow:var(--shadow)}
+.leak.flash{border-color:var(--berry)}
+.lhead{all:unset; box-sizing:border-box; width:100%; display:grid; grid-template-columns:auto 1fr auto auto; gap:16px; align-items:center; padding:18px 22px; cursor:pointer}
+.lhead:focus-visible{outline:2px solid var(--berry); outline-offset:-2px; border-radius:var(--r)}
+.lnum{font-family:"Schibsted Grotesk",sans-serif; font-weight:700; font-size:12.5px; width:32px; height:32px; border-radius:50%; display:grid; place-items:center}
+.leak[data-type="leak"] .lnum{background:var(--alert-bg); color:var(--alert); border:1px solid var(--alert-line)}
+.leak[data-type="data"] .lnum{background:var(--warn-bg); color:var(--warn); border:1px solid var(--warn-line)}
+.leak[data-type="growth"] .lnum{background:var(--good-bg); color:var(--good); border:1px solid var(--good-line)}
+.ltitle h3{font-size:17.5px; line-height:1.25}
+.ltitle p{font-size:14px; color:var(--muted); margin-top:3px; line-height:1.4}
+.lwhen{text-align:right}
+.lwhen .badge{display:inline-block}
+.lwhen small{display:block; font-size:12px; color:var(--muted); margin-top:5px}
+.caret{width:28px;height:28px;border-radius:50%; border:1px solid var(--line); display:grid; place-items:center; transition:transform .3s; color:var(--ink-2)}
+.leak.open .caret{transform:rotate(180deg); background:var(--surface-2)}
+.lbody{display:grid; grid-template-rows:0fr; transition:grid-template-rows .35s ease}
+.leak.open .lbody{grid-template-rows:1fr}
+.lbody > div{overflow:hidden}
+.lgrid{display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line-2); margin:0 22px 20px}
+.lgrid.w{grid-template-columns:1fr 1fr 1.25fr}
+.lcol{padding:16px 20px 2px 0}
+.lcol + .lcol{padding-left:20px; border-left:1px solid var(--line-2)}
+.lcol h4{font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; margin-bottom:8px}
+.lcol.saw h4{color:var(--ink-2)} .lcol.cost h4{color:var(--alert)} .lcol.fix h4{color:var(--good)}
+.lcol p, .lcol li{font-size:14px; color:var(--ink-2); line-height:1.5}
+.lcol ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:6px}
+.lcol li{padding-left:16px; position:relative}
+.lcol li::before{content:""; position:absolute; left:0; top:8px; width:6px; height:6px; border-radius:50%; background:var(--good)}
+.mini{margin-top:10px; display:flex; flex-direction:column; gap:5px}
+.mrow{display:flex; justify-content:space-between; gap:10px; font-size:12.5px; padding:6px 10px; border-radius:8px; background:var(--surface-2)}
+.mrow.you{background:var(--alert-bg); color:var(--alert); font-weight:600}
+.mrow.win{background:var(--good-bg); color:var(--good); font-weight:600}
+.mrow span:last-child{font-variant-numeric:tabular-nums; white-space:nowrap}
+/* serp inside finding 01 */
+.serp{background:var(--bg); border:1px solid var(--line); border-radius:14px; padding:12px; margin-top:2px}
+.sbar{display:flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:100px; padding:7px 12px; font-size:13px; color:var(--ink-2); background:var(--surface)}
+.res{padding:9px 10px; margin-top:8px; border-radius:10px; position:relative; background:var(--surface)}
+.res .sp{font-size:10.5px; font-weight:700; color:var(--ink-2); padding-right:64px}
+.res .t{font-size:13.5px; color:var(--link); margin-top:2px; line-height:1.3; padding-right:64px}
+.res .u{font-size:11px; color:var(--muted)}
+.res .badge{position:absolute; right:8px; top:9px; font-size:9.5px; padding:3px 8px}
+.res.hijack{background:var(--alert-bg); outline:1px solid var(--alert-line)}
+.res.hijack .t{color:var(--alert)}
+
+/* PLAN */
+.plan{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+.phase{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:22px; box-shadow:var(--shadow-sm); display:flex; flex-direction:column; position:relative}
+.phase::before{content:""; position:absolute; left:22px; right:22px; top:0; height:3px; border-radius:0 0 3px 3px; background:var(--berry-2)}
+.phase:nth-child(3)::before{background:var(--good)}
+.phase .top{display:flex; justify-content:space-between; align-items:center; margin-bottom:10px}
+.phase .pk{font-family:"Schibsted Grotesk",sans-serif; font-size:11.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--berry)}
+.phase .days{font-size:12px; color:var(--muted); background:var(--surface-2); padding:3px 10px; border-radius:100px}
+.phase h3{font-size:19px; line-height:1.2; margin-bottom:10px}
+.phase ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:7px; flex:1}
+.phase li{font-size:14px; color:var(--ink-2); padding-left:16px; position:relative; line-height:1.42}
+.phase li::before{content:""; position:absolute; left:0; top:7px; width:6px; height:6px; border-radius:2px; background:var(--berry-2)}
+.outcome{margin-top:14px; padding:11px 13px; border-radius:11px; background:var(--good-bg); border:1px solid var(--good-line); font-size:13.5px; color:var(--ink-2); line-height:1.42}
+.outcome b{display:block; font-family:"Schibsted Grotesk",sans-serif; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--good); margin-bottom:2px}
+.seat{display:grid; grid-template-columns:auto repeat(3,1fr); gap:0; margin-top:16px; background:var(--surface-2); border-radius:var(--r); align-items:stretch}
+.seat > div{padding:14px 18px; font-size:13.5px; color:var(--ink-2); line-height:1.45}
+.seat > div + div{border-left:1px solid var(--line)}
+.seat .lab{font-family:"Schibsted Grotesk",sans-serif; font-weight:600; font-size:13.5px; color:var(--ink); display:flex; align-items:center}
+.seat b{font-family:"Schibsted Grotesk",sans-serif; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--berry); display:block; margin-bottom:2px}
+
+/* PROOF */
+.proof{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+.pf{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); padding:22px; box-shadow:var(--shadow-sm); display:flex; flex-direction:column}
+.pf.lead{grid-column:1 / -1; background:linear-gradient(150deg,var(--berry-bg),var(--surface) 75%); display:grid; grid-template-columns:1.1fr 1fr; gap:28px; align-items:center}
+.pf .cat{font-family:"Schibsted Grotesk",sans-serif; font-size:10.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:10px}
+.pf .big{font-family:"Schibsted Grotesk",sans-serif; font-size:36px; font-weight:700; letter-spacing:-.04em; line-height:1; color:var(--ink)}
+.pf .big.g{color:var(--good)}
+.pf.lead .big{font-size:50px; color:var(--berry)}
+.pf .lab{font-size:13px; color:var(--muted); margin-top:6px; line-height:1.4}
+.pf .desc{font-size:13.5px; color:var(--ink-2); margin-top:10px; line-height:1.45; flex:1}
+.stats{display:grid; grid-template-columns:1fr 1fr; gap:14px 18px; padding-left:28px; border-left:1px solid var(--line)}
+.stats b{display:block; font-family:"Schibsted Grotesk",sans-serif; font-size:26px; letter-spacing:-.02em; line-height:1.1}
+.stats span{font-size:12px; color:var(--muted); line-height:1.35; display:block; margin-top:3px}
+.stats .why{grid-column:1 / -1; font-size:13px; color:var(--ink-2); line-height:1.45; padding-top:12px; border-top:1px solid var(--line)}
+.watch{margin-top:12px; display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600; text-decoration:none; color:var(--ink); padding:6px 12px 6px 7px; border-radius:100px; border:1px solid var(--line); background:var(--surface); align-self:flex-start}
+.watch:hover{border-color:var(--ink-2)}
+.watch .play{width:20px;height:20px;border-radius:50%; background:var(--berry); display:grid; place-items:center}
+
+/* CTA */
+.cta{padding:8px 0 56px}
+.cta .box{background:var(--ink); color:var(--bg); border-radius:22px; padding:38px 44px; display:grid; grid-template-columns:1fr auto; gap:36px; align-items:center; position:relative; overflow:hidden}
+.cta .box::after{content:""; position:absolute; right:-110px; top:-110px; width:320px; height:320px; border-radius:50%; background:radial-gradient(circle, color-mix(in srgb,var(--berry-2) 55%,transparent), transparent 70%); pointer-events:none}
+.cta .eyebrow{color:var(--berry-2); display:block; margin-bottom:10px}
+.cta h2{font-size:clamp(23px,2.8vw,30px); line-height:1.12; max-width:26ch; color:var(--bg)}
+.cta p{margin-top:10px; font-size:15px; max-width:58ch; color:color-mix(in srgb,var(--bg) 78%,transparent)}
+.cta p strong{color:var(--bg)}
+.cta .side{text-align:center; padding-left:36px; border-left:1px solid color-mix(in srgb,var(--bg) 18%,transparent); position:relative; z-index:1}
+.cta .side .w{font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:600; color:color-mix(in srgb,var(--bg) 60%,transparent)}
+.cta .side .h{font-family:"Schibsted Grotesk",sans-serif; font-weight:700; font-size:42px; letter-spacing:-.04em; line-height:1.05; margin-top:2px}
+.cta .side .s{font-size:12.5px; color:color-mix(in srgb,var(--bg) 65%,transparent)}
+.sig{border-top:1px solid var(--line); padding:20px 0 32px; text-align:center; font-size:12px; color:var(--muted); letter-spacing:.04em}
+
+.rv{opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease}
+.rv.in{opacity:1; transform:none}
+
+@media (max-width:880px){
+  .nav{display:none}
+  .hero .wrap{grid-template-columns:1fr; gap:30px; padding-top:36px}
+  .sec-head{display:block}
+  .sec-head .sub{text-align:left; margin-top:8px}
+  .plan{grid-template-columns:1fr}
+  .seat{grid-template-columns:1fr}
+  .seat > div + div{border-left:0; border-top:1px solid var(--line)}
+  .lgrid, .lgrid.w{grid-template-columns:1fr; margin:0 18px 18px}
+  .lcol, .lcol + .lcol{padding:14px 0 2px; border-left:0}
+  .lcol + .lcol{border-top:1px solid var(--line-2)}
+  .lhead{grid-template-columns:auto 1fr auto; padding:16px 18px; gap:12px}
+  .lwhen{display:none}
+  .cta .box{grid-template-columns:1fr; padding:32px 26px}
+  .cta .side{padding-left:0; border-left:0; border-top:1px solid color-mix(in srgb,var(--bg) 18%,transparent); padding-top:20px}
+}
+@media (max-width:640px){
+  .legend{justify-content:flex-start}
+  .proof{grid-template-columns:1fr}
+  .pf.lead{grid-template-columns:1fr}
+  .stats{padding-left:0; border-left:0; padding-top:14px; border-top:1px solid var(--line)}
+}
+@media (max-width:560px){
+  .wrap, .topbar .wrap{padding-left:16px; padding-right:16px}
+  section{padding:40px 0}
+  .snap{padding:4px 14px 12px}
+  .proof{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important; scroll-behavior:auto!important} .rv{opacity:1; transform:none}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <div class="mark" aria-hidden="true"></div>
+      <div><b>Performance Paid Media</b><span>Google Ads Leak &amp; Growth Map</span></div>
+    </div>
+    <nav class="nav" aria-label="Sections">
+      <a href="#map">What we found</a>
+      <a href="#plan">90 day plan</a>
+      <a href="#proof">Proof</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">Prepared for 100% PURE · September 2026</span>
+      <h1>Where your Google spend <span class="serif">leaks</span>, and where the next sales are.</h1>
+      <p class="lede">Your brand, reviews and product data are strong. <strong>Three setup gaps are sending money to the wrong places</strong>, and your best sellers are missing on the searches that bring new customers.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#map">See the 5 findings</a>
+        <small>Tap any red row to jump straight to it</small>
+      </div>
+    </div>
+
+    <aside class="snap rv" aria-label="Your Google setup today">
+      <div class="snap-h"><b>Your Google setup today</b><small>Sept 2026</small></div>
+      <div class="srow"><span class="st">Search, Shopping and Video all live<small>With a 4.5 seller rating from 81,000+ ratings on your ads</small></span><span class="badge ok">Strong</span></div>
+      <a class="srow" href="#f1" data-open="f1"><span class="st">Your brand name protected<small>Another advertiser is bidding on it</small></span><span class="badge no">At risk</span></a>
+      <a class="srow" href="#f2" data-open="f2"><span class="st">Bidding learns from purchases only<small>Browsing actions sent as conversions</small></span><span class="badge no">Leaking</span></a>
+      <a class="srow" href="#f3" data-open="f3"><span class="st">Shopping price looks competitive<small>Eye cream shown at $63/oz next to discounts</small></span><span class="badge no">Leaking</span></a>
+      <a class="srow" href="#f4" data-open="f4"><span class="st">Google ads match your new brand story<small>Still "organic" and "toxin-free"</small></span><span class="badge mid">Off</span></a>
+      <a class="srow" href="#f5" data-open="f5"><span class="st">Hero products found on new searches<small>Eye cream, mascara</small></span><span class="badge mid">Gap</span></a>
+      <div class="snap-f">Seen from the outside. Exact figures come with account access.</div>
+    </aside>
+  </div>
+</div>
+
+<!-- MAP -->
+<section id="map">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="eyebrow">What we found</span><h2>Five findings, ranked by what they cost you.</h2></div>
+      <p class="sub legend"><span><i class="dot r"></i>Money leaking</span><span><i class="dot a"></i>Message off</span><span><i class="dot g"></i>Growth</span></p>
+    </div>
+
+    <div class="leaks">
+
+      <article class="leak open" id="f1" data-type="leak">
+        <button class="lhead" aria-expanded="true">
+          <span class="lnum">01</span>
+          <span class="ltitle"><h3>Another advertiser is buying your brand name</h3><p>Shoppers searching "100% PURE" see two ads, and only one is yours.</p></span>
+          <span class="lwhen"><span class="badge no">High impact</span><small>Fix in week 1</small></span>
+          <span class="caret" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+        <div class="lbody"><div>
+          <div class="lgrid w">
+            <div class="lcol cost"><h4>What it costs you</h4><p>These shoppers <strong>already want to buy from you</strong>. A second bidder pushes up what you pay for your own name, your cheapest and highest return traffic. With an affiliate program on your site, if this advertiser is a partner you may also be <strong class="r">paying commission on customers who were already yours</strong>.</p></div>
+            <div class="lcol fix"><h4>How we fix it</h4><ul><li>Full brand campaign coverage, so you hold the top spot</li><li>Brand-bidding rules added to your affiliate terms</li><li>Trademark and advertiser complaint with Google</li><li>Weekly check so it does not come back</li></ul></div>
+            <div class="lcol saw"><h4>What we saw</h4>
+              <div class="serp" aria-label="Illustration of your brand search">
+                <div class="sbar"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>100% pure makeup</div>
+                <div class="res"><div class="sp">Sponsored · 100 Percent Pure</div><div class="t">Shop 100% PURE Cosmetics, Free Shipping Orders $50+</div><div class="u">100percentpure.com</div><span class="badge ok">You</span></div>
+                <div class="res hijack"><div class="sp">Sponsored · Third-party advertiser</div><div class="t">100% PURE Cosmetics, 100% PURE Store Locations</div><div class="u">100percentpure.com</div><span class="badge no">Not you</span></div>
+              </div>
+            </div>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="leak" id="f2" data-type="leak">
+        <button class="lhead" aria-expanded="false">
+          <span class="lnum">02</span>
+          <span class="ltitle"><h3>Google may be learning from browsing, not buying</h3><p>Page views, product views and add to carts reach Google Ads as conversions, and two Analytics properties split your data.</p></span>
+          <span class="lwhen"><span class="badge no">High impact</span><small>Fix in week 1</small></span>
+          <span class="caret" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+        <div class="lbody"><div>
+          <div class="lgrid">
+            <div class="lcol saw"><h4>What we saw</h4><p>Page views, product views, add to carts and checkouts are all sent to Google Ads as conversion events. Two Google Analytics IDs load on the site; live traffic reaches only one.</p></div>
+            <div class="lcol cost"><h4>What it costs you</h4><p>If a browsing action counts as a main goal, automated bidding pays for visitors who look but do not buy, and <strong>reported results look better than what reaches your bank</strong>. Two Analytics sources mean two versions of the truth.</p></div>
+            <div class="lcol fix"><h4>How we fix it</h4><ul><li>Purchases with real order value as the only main goal</li><li>Browsing actions kept for insight only</li><li>One Analytics source, checked against Shopify weekly</li><li>New vs returning customer split</li></ul></div>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="leak" id="f3" data-type="leak">
+        <button class="lhead" aria-expanded="false">
+          <span class="lnum">03</span>
+          <span class="ltitle"><h3>Shopping makes your eye cream look the most expensive</h3><p>The smallest size is shown, and none of your offers appear next to discounted rivals.</p></span>
+          <span class="lwhen"><span class="badge no">High impact</span><small>Fix in week 1 to 2</small></span>
+          <span class="caret" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+        <div class="lbody"><div>
+          <div class="lgrid">
+            <div class="lcol saw"><h4>What we saw</h4><p>Search "caffeine eye cream" on Google Shopping:</p>
+              <div class="mini" aria-label="Shopping comparison">
+                <div class="mrow"><span>INKEY List · 30% off</span><span>$9.80</span></div>
+                <div class="mrow"><span>Mario Badescu · 30% off</span><span>$14.00</span></div>
+                <div class="mrow you"><span>100% PURE 0.3 oz · no offer</span><span>$19 · $63/oz</span></div>
+                <div class="mrow win"><span>Your 1 oz, not shown</span><span>$35 · $35/oz</span></div>
+              </div>
+            </div>
+            <div class="lcol cost"><h4>What it costs you</h4><p>Shoppers compare in one glance. A product with <strong>4,600+ reviews</strong> looks like the priciest option and carries no sale badge, even while you run B3G1 and a free body cream offer. Fewer clicks, lower conversion rate.</p></div>
+            <div class="lcol fix"><h4>How we fix it</h4><ul><li>Lead with the best value size in the feed</li><li>Merchant promotions so B3G1 and gift offers show on the listing</li><li>Titles built around size, benefit and shade</li><li>Same check across every hero product</li></ul></div>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="leak" id="f4" data-type="data">
+        <button class="lhead" aria-expanded="false">
+          <span class="lnum">04</span>
+          <span class="ltitle"><h3>Your Google ads still tell the old brand story</h3><p>Social says "science-backed purity". Google says "organic" and "toxin-free".</p></span>
+          <span class="lwhen"><span class="badge mid">Medium</span><small>Fix in week 2 to 3</small></span>
+          <span class="caret" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+        <div class="lbody"><div>
+          <div class="lgrid">
+            <div class="lcol saw"><h4>What we saw</h4><p>Recent social campaigns lead with "Clean without compromise" and ingredient science. Google text ads lead with "Organic Makeup" and "Toxin-Free", and one promotion reads "100% off B3G1".</p></div>
+            <div class="lcol cost"><h4>What it costs you</h4><p>Mixed messages weaken the new positioning your team is investing in. Broad "toxin-free" style wording also draws closer review from ad platforms and shoppers.</p></div>
+            <div class="lcol fix"><h4>How we fix it</h4><ul><li>Ad copy and assets rebuilt on the current story, with your content and design team</li><li>Claims kept inside Google beauty and health policies</li><li>Promotion text that reads clearly</li></ul></div>
+          </div>
+        </div></div>
+      </article>
+
+      <article class="leak" id="f5" data-type="growth">
+        <button class="lhead" aria-expanded="false">
+          <span class="lnum">05</span>
+          <span class="ltitle"><h3>Your best sellers are missing where new customers search</h3><p>Strong on your own name, largely absent on product and skin concern searches.</p></span>
+          <span class="lwhen"><span class="badge ok">Biggest upside</span><small>Build in week 2 to 4</small></span>
+          <span class="caret" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+        <div class="lbody"><div>
+          <div class="lgrid">
+            <div class="lcol saw"><h4>What we saw</h4>
+              <div class="mini" aria-label="Search visibility">
+                <div class="mrow win"><span>"fruit pigmented makeup"</span><span>You rank #1</span></div>
+                <div class="mrow you"><span>"caffeine eye cream"</span><span>Not in top results</span></div>
+                <div class="mrow you"><span>"clean vegan mascara"</span><span>Not in top results</span></div>
+              </div>
+            </div>
+            <div class="lcol cost"><h4>What it costs you</h4><p>Your eye cream holds <strong>4,672 reviews at 4.5</strong>, yet other brands and magazines own that page. New buyers meet competitors first, and growth leans on people who already know you.</p></div>
+            <div class="lcol fix"><h4>How we fix it</h4><ul><li>Non-brand Search and Shopping around hero products and skin concerns</li><li>Separate budgets for brand, hero products and launches</li><li>Shared keyword gap list with your SEO team</li></ul></div>
+          </div>
+        </div></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PLAN -->
+<section id="plan" style="padding-top:12px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="eyebrow">The plan</span><h2>90 days, in the order that pays back first.</h2></div>
+      <p class="sub">Stop the leaks, rebuild for profit, then scale. Each phase ends with something you can see in your numbers.</p>
+    </div>
+    <div class="plan">
+      <div class="phase rv">
+        <div class="top"><span class="pk">Phase 1</span><span class="days">Days 1 to 7</span></div>
+        <h3>Stop the leaks</h3>
+        <ul>
+          <li>Full account audit within 24 hours of access</li>
+          <li>Purchases as the only main goal, one Analytics source</li>
+          <li>Brand campaign locked down, advertiser reported</li>
+          <li>Feed and offer fixes on hero products</li>
+        </ul>
+        <div class="outcome"><b>You should see</b>Bidding trained on real orders, and brand clicks no longer shared.</div>
+      </div>
+      <div class="phase rv">
+        <div class="top"><span class="pk">Phase 2</span><span class="days">Days 8 to 30</span></div>
+        <h3>Rebuild for profit</h3>
+        <ul>
+          <li>Non-brand Search and Shopping for hero products</li>
+          <li>Performance Max split by brand, hero and launches</li>
+          <li>Ads and assets on the current brand story</li>
+          <li>Microsoft Ads added from your Google setup</li>
+        </ul>
+        <div class="outcome"><b>You should see</b>Return on ad spend by product line, and first new-customer sales from hero products.</div>
+      </div>
+      <div class="phase rv">
+        <div class="top"><span class="pk">Phase 3</span><span class="days">Days 31 to 90</span></div>
+        <h3>Scale what sells</h3>
+        <ul>
+          <li>Monthly A/B tests on ads, offers and landing pages</li>
+          <li>YouTube and Demand Gen with your existing video</li>
+          <li>Shopping extended to Canada and the UK</li>
+          <li>Paid and organic keyword plan with your SEO team</li>
+        </ul>
+        <div class="outcome"><b>You should see</b>Budget moving to what brings profitable new customers, with proof of why.</div>
+      </div>
+    </div>
+    <div class="seat rv" aria-label="How the role runs">
+      <div class="lab">How the seat runs</div>
+      <div><b>Daily</b>Bids, budgets, search terms, disapprovals and feed errors.</div>
+      <div><b>Weekly</b>Plain language report on sales and return on spend, plus a check-in with content and design.</div>
+      <div><b>Monthly</b>Strategy and test review with you, and a paid and organic review with SEO.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section id="proof" style="padding-top:12px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="eyebrow">Similar work</span><h2>E-commerce scale, beauty and health buyers.</h2></div>
+      <p class="sub">Results from accounts managed. Client names kept private.</p>
+    </div>
+    <div class="proof">
+      <div class="pf lead rv">
+        <div>
+          <div class="cat">E-commerce · Shopify · Google Ads</div>
+          <div class="big">$5.6M</div>
+          <div class="lab">verified Shopify revenue in one year (2022)</div>
+          <p class="desc">Full account across Search, Shopping, Performance Max, Display and Video, with revenue verified in Shopify.</p>
+        </div>
+        <div class="stats">
+          <div><b>$15.5M</b><span>lifetime spend on the account</span></div>
+          <div><b>977</b><span>campaigns in the account</span></div>
+          <div class="why">The same revenue-first measurement is what fixes finding 02 in your first week.</div>
+        </div>
+      </div>
+      <div class="pf rv">
+        <div class="cat">Medical aesthetics</div>
+        <div class="big">9.2x</div>
+        <div class="lab">return on ad spend</div>
+        <p class="desc">Treatment and brand Search, with 84% brand impression share.</p>
+      </div>
+      <div class="pf rv">
+        <div class="cat">Sleep &amp; health clinic</div>
+        <div class="big">212</div>
+        <div class="lab">conversions at £42.15 each, 3 months</div>
+        <p class="desc">Search plus Performance Max.</p>
+        <a class="watch" href="https://drive.google.com/file/d/1xp0qhy25UAHfXfT0D2XO6PuR4KGQaO_z/view?usp=drive_link" target="_blank" rel="noopener"><span class="play"><svg width="9" height="9" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>Live dashboard</a>
+      </div>
+      <div class="pf rv">
+        <div class="cat">Laser clinic</div>
+        <div class="big g">-71%</div>
+        <div class="lab">cost per lead in one month</div>
+        <p class="desc">Negative keyword clean-up on the geo campaign.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <div class="wrap">
+    <div class="box rv">
+      <div style="position:relative; z-index:1">
+        <span class="eyebrow">Where we begin</span>
+        <h2>Real dollar figures on every leak, within a day.</h2>
+        <p>With access to Google Ads, Merchant Center and Analytics, you get a <strong>full account audit within 24 hours</strong>: what each finding is costing, what gets fixed first, and the week one changes, ready to go.</p>
+      </div>
+      <div class="side">
+        <div class="w">Full audit in</div>
+        <div class="h">24 hrs</div>
+        <div class="s">from account access</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sig">Prepared for 100% PURE · Google Ads Leak &amp; Growth Map · September 2026</div>
+
+<script>
+(function(){
+  function setOpen(card, open){
+    card.classList.toggle('open', open);
+    var b = card.querySelector('.lhead'); if(b) b.setAttribute('aria-expanded', open ? 'true':'false');
+  }
+  document.querySelectorAll('.leak .lhead').forEach(function(btn){
+    btn.addEventListener('click', function(){ var c = btn.closest('.leak'); setOpen(c, !c.classList.contains('open')); });
+  });
+  document.querySelectorAll('[data-open]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var t = document.getElementById(a.getAttribute('data-open'));
+      if(!t) return;
+      document.querySelectorAll('.leak').forEach(function(l){ if(l!==t) setOpen(l,false); });
+      setOpen(t, true); t.classList.add('flash'); setTimeout(function(){ t.classList.remove('flash'); }, 1600);
+    });
+  });
+  var els = document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); }, {threshold:.1});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('in'); }); }
+  var p = document.getElementById('progress');
+  function onScroll(){ var h = document.documentElement, max = h.scrollHeight - h.clientHeight; p.style.width = (max>0 ? h.scrollTop/max*100 : 0) + '%'; }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+})();
+</script>
+</body>
+</html>
